@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<!-- saved from url=(0041)https://jplist.com/layoutexamples/table-2 -->
+<html lang="en" class=" js flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Table Layout Version 2 | jPList - jQuery Data Grid Controls</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">        
+        
+    <meta name="description" content="jPList jQuery Data Grid Controls plugin demo page for filtering, sorting and pagination controls with TABLE layout">
+    <meta name="keywords" content="jquery plugin, table, layout, filter, filtering, sort, sorting, paging, pagination">
+
+      
+        <!-- css -->
+        <link href="css/css" rel="stylesheet" type="text/css">
+		<link href="https://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://jplist.com/content/css/vendor/normalize.css">
+		<link rel="stylesheet" href="https://jplist.com/content/css/styles.min.css?v=3">
+        <link href="https://jplist.com/content/img/common/favicon.png" rel="shortcut icon">
+
+        
+	<link href="css/jplist-demo-pages.min.css" rel="stylesheet" type="text/css">
+    <link href="css/jplist-core.min.css" rel="stylesheet" type="text/css">
+    <link href="css/jplist-filter-toggle-bundle.min.css" rel="stylesheet" type="text/css">
+    <link href="css/jplist-pagination-bundle.min.css" rel="stylesheet" type="text/css">
+    <link href="css/jplist-history-bundle.min.css" rel="stylesheet" type="text/css">
+    <link href="css/jplist-textbox-control.min.css" rel="stylesheet" type="text/css">
+    <link href="css/jplist-jquery-ui-bundle.min.css" rel="stylesheet" type="text/css">
+    <link href="css/jplist-preloader-control.min.css" rel="stylesheet" type="text/css">
+    <link href="css/jplist-start-rating-control.min.css" rel="stylesheet" type="text/css">
+    <link href="css/jplist-views-control.min.css" rel="stylesheet" type="text/css">
+
+
+        <!-- js -->		
+        <script async="" src="js/analytics.js"></script><script src="js/jquery-1.10.0.min.js"></script>
+		<script src="js/modernizr.min.js"></script>
+        <script src="js/jquery.lazyload.min.js"></script>        
+        <script src="js/website.min.js"></script>
+
+        
+
+    <script src="js/jplist-core.min.js"></script>
+    <script src="js/jplist.counter-control.min.js"></script>
+    <script src="js/jplist.filter-dropdown-bundle.min.js"></script>
+    <script src="js/jplist.filter-toggle-bundle.min.js"></script>
+    <script src="js/jplist.history-bundle.min.js"></script>
+    <script src="js/jplist.jquery-ui-bundle.min.js"></script>
+    <script src="js/jplist.pagination-bundle.min.js"></script>
+    <script src="js/jplist.sort-bundle.min.js"></script>
+    <script src="js/jplist.textbox-control.min.js"></script>
+    <script src="js/jplist.views-control.min.js"></script>
+    <script src="js/jplist.start-rating-control.min.js"></script>
+
+	<script>
+		$('document').ready(function () {
+		    $('#demo').jplist({
+
+		        itemsBox: '.demo-tbl tbody'
+				, itemPath: '.tbl-item'
+				, panelPath: '.jplist-panel'
+
+		        //save plugin state
+				, storage: 'localstorage' //'', 'cookies', 'localstorage'			
+				, storageName: 'jplist-table-2'
+
+				, redrawCallback: function () {
+					$('.tbl-item').each(function (index, el) {
+					    if (index % 2 === 0) {
+					        $(el).addClass('even');
+					    }
+					    else {
+					        $(el).addClass('odd');
+					    }
+					});
+				}
+		    });
+		});
+	</script>
+
+
+        
+    </head>
+    <body>
+		
+
+		
+    
+
+        
+
+
+
+        
+
+
+
+
+
+<div class="box">
+	<div class="center">
+        
+        <div class="box text-shadow">
+	        <h1 class="h1-30-normal left">Table Layout Version 2</h1>
+        </div>
+
+        <div class="box text-shadow">
+	
+            <!-- demo -->
+            <div id="demo" class="box jplist table-layout-2">
+					
+	            <!-- ios button: show/hide panel -->
+	            <div class="jplist-ios-button">
+		            <i class="fa fa-sort"></i>
+		            jPList Actions
+	            </div>
+						
+	            <!-- panel -->
+	            <div class="jplist-panel box panel-top">					
+							
+		            <!-- reset button -->
+		            <button type="button" class="jplist-reset-btn" data-control-type="reset" data-control-name="reset" data-control-action="reset">
+			            Reset &nbsp;<i class="fa fa-share"></i>
+		            </button>
+							
+		            <!-- items per page dropdown -->
+		            <div class="jplist-drop-down" data-control-type="items-per-page-drop-down" data-control-name="paging" data-control-action="paging"><div class="jplist-dd-panel"> 10 per page </div>
+								
+			            <ul style="display: none;">
+				            <li class=""><span data-number="3"> 3 per page </span></li>
+				            <li><span data-number="5"> 5 per page </span></li>
+				            <li class="active"><span data-number="10" data-default="true"> 10 per page </span></li>
+				            <li class=""><span data-number="all"> View All </span></li>
+			            </ul>
+		            </div>
+							
+		            <!-- sort dropdown -->
+		            <div class="jplist-drop-down" data-control-type="sort-drop-down" data-control-name="sort" data-control-action="sort" data-datetime-format="{month}/{day}/{year}"><div class="jplist-dd-panel">Likes asc</div> <!-- {year}, {month}, {day}, {hour}, {min}, {sec} -->
+								
+			            <ul style="display: none;">
+				            <li class=""><span data-path="default">Sort by</span></li>
+				            <li><span data-path=".title" data-order="asc" data-type="text">Title A-Z</span></li>
+				            <li><span data-path=".title" data-order="desc" data-type="text">Title Z-A</span></li>
+				            <li><span data-path=".desc" data-order="asc" data-type="text">Description A-Z</span></li>
+				            <li><span data-path=".desc" data-order="desc" data-type="text">Description Z-A</span></li>
+				            <li class="active"><span data-path=".like" data-order="asc" data-type="number" data-default="true">Likes asc</span></li>
+				            <li><span data-path=".like" data-order="desc" data-type="number">Likes desc</span></li>
+				            <li><span data-path=".date" data-order="asc" data-type="datetime">Date asc</span></li>
+				            <li><span data-path=".date" data-order="desc" data-type="datetime">Date desc</span></li>
+			            </ul>
+		            </div>
+							
+		            <!-- filter by title -->
+		            <div class="text-filter-box">
+							
+			            <i class="fa fa-search  jplist-icon"></i>
+								
+			            <!--[if lt IE 10]>
+			            <div class="jplist-label">Filter by Title:</div>
+			            <![endif]-->
+								
+			            <input data-path=".title" type="text" value="" placeholder="Filter by Title" data-control-type="textbox" data-control-name="title-filter" data-control-action="filter" autocomplete="off">
+		            </div>
+							
+		            <!-- filter by description -->
+		            <div class="text-filter-box">
+								
+			            <i class="fa fa-search  jplist-icon"></i>
+								
+			            <!--[if lt IE 10]>
+			            <div class="jplist-label">Filter by Description:</div>
+			            <![endif]-->
+								
+			            <input data-path=".desc" type="text" value="" placeholder="Filter by Description" data-control-type="textbox" data-control-name="desc-filter" data-control-action="filter">	
+		            </div>	
+							
+		            <!-- pagination results -->
+		            <div class="jplist-label" data-type="Page {current} of {pages}" data-control-type="pagination-info" data-control-name="paging" data-control-action="paging">Page 1 of 4</div>
+								
+		            <!-- pagination -->
+		            <div class="jplist-pagination" data-control-type="pagination" data-control-name="paging" data-control-action="paging"><div class="jplist-pagingprev jplist-hidden" data-type="pagingprev"><button type="button" class="jplist-first" data-number="0" data-type="first">«</button><button type="button" class="jplist-prev" data-type="prev" data-number="0">‹</button></div><div class="jplist-pagingmid" data-type="pagingmid"><div class="jplist-pagesbox" data-type="pagesbox"><button type="button" data-type="page" class="jplist-current" data-active="true" data-number="0">1</button> <button type="button" data-type="page" data-number="1">2</button> <button type="button" data-type="page" data-number="2">3</button> <button type="button" data-type="page" data-number="3">4</button> </div></div><div class="jplist-pagingnext" data-type="pagingnext"><button type="button" class="jplist-next" data-type="next" data-number="1">›</button><button type="button" class="jplist-last" data-type="last" data-number="3">»</button></div></div>	
+	            </div>
+						
+	            <!-- data --> 
+	            <div class="box text-shadow">
+		            <table class="demo-tbl">
+			            <thead>
+				            <tr>
+					            <th>Type</th>
+					            <th>Date</th>
+								<th>Status</th>
+				            </tr>
+			            </thead>
+						
+			            <tbody class="">
+				            <!-- item 1 -->
+				            
+									
+				            <!-- item 2 -->
+				            
+									
+				            <!-- item 3 -->
+				            
+									
+				            <!-- item 4 -->
+				            
+									
+				            <!-- item 5 -->
+				            
+									
+				            <!-- item 6 -->
+				            
+									
+				            <!-- item 7 -->
+				            
+									
+				            <!-- item 8 -->
+				            
+									
+				            <!-- item 9 -->
+				            
+									
+				            <!-- item 10 -->
+				            
+									
+				            <!-- item 11 -->
+				            
+									
+				            <!-- item 12 -->
+				            
+									
+				            <!-- item 13 -->
+				            
+									
+				            <!-- item 14 -->
+				            
+									
+				            <!-- item 15 -->
+				            
+									
+				            <!-- item 16 -->
+				            
+									
+				            <!-- item 17 -->
+				            
+									
+				            <!-- item 18 -->
+				            
+									
+				            <!-- item 19 -->
+				            
+									
+				            <!-- item 20 -->
+				            
+									
+				            <!-- item 21 -->
+				            
+									
+				            <!-- item 22 -->
+				            
+									
+				            <!-- item 23 -->
+				            
+									
+				            <!-- item 24 -->
+				            
+									
+				            <!-- item 25 -->
+				            
+									
+				            <!-- item 26 -->
+				            
+									
+				            <!-- item 27 -->
+				            
+									
+				            <!-- item 28 -->
+				            
+									
+				            <!-- item 29 -->
+				            
+									
+				            <!-- item 30 -->
+				            
+									
+				            <!-- item 31 -->
+				            
+									
+				            <!-- item 32 -->
+				            
+									
+				            <!-- item 33 -->
+				            
+			            <tr class="tbl-item even">					
+					            <!-- img -->
+					            <td class="img">
+						            <img src="img/arch-1.jpg" alt="" title="">
+					            </td>
+										
+					            <!-- data -->
+					            <td class="td-block">
+						            <p class="date">03/15/2012</p>
+						            <p class="title">Arch</p>
+						            <p class="desc">An arch is a structure that spans a space and supports a load. Arches appeared as early as the 2nd millennium BC in Mesopotamian brick architecture and their systematic use started with the Ancient Romans who were the first to apply the technique to a wide range of structures.</p>
+						            <p class="like">5 Likes</p>
+					            </td>
+				            </tr><tr class="tbl-item odd">					
+					            <!-- img -->
+					            <td class="img">
+						            <img src="img/car-1.jpg" alt="" title="">
+					            </td>
+										
+					            <!-- data -->
+					            <td class="td-block">
+						            <p class="date">09/01/2007</p>
+						            <p class="title">Car</p>
+						            <p class="desc">An automobile, autocar, motor car or car is a wheeled motor vehicle used for transporting passengers, which also carries its own engine or motor. Most definitions of the term specify that automobiles are designed to run primarily on roads, to have seating for one to eight people, to typically have four wheels, and to be constructed principally for the transport of people rather than goods.</p>
+						            <p class="like">7 Likes</p>
+					            </td>
+				            </tr><tr class="tbl-item even">					
+					            <!-- img -->
+					            <td class="img">
+						            <img src="img/boats-1.jpg" alt="" title="">
+					            </td>
+										
+					            <!-- data -->
+					            <td class="td-block">
+						            <p class="date">02/24/2000</p>
+						            <p class="title">Boats</p>
+						            <p class="desc">A boat is a watercraft of any size designed to float or plane, to provide passage across water. Usually this water will be inland (lakes) or in protected coastal areas. However, boats such as the whaleboat were designed to be operated from a ship in an offshore environment. In naval terms, a boat is a vessel small enough to be carried aboard another vessel (a ship).</p>
+						            <p class="like">11 Likes</p>
+					            </td>
+				            </tr><tr class="tbl-item odd even">					
+					            <!-- img -->
+					            <td class="img">
+						            <img src="img/autumn-1.jpg" alt="" title="">
+					            </td>
+										
+					            <!-- data -->
+					            <td class="td-block">
+						            <p class="date">01/16/2011</p>
+						            <p class="title">Autumn</p>
+						            <p class="desc">Autumn or Fall is one of the four temperate seasons. Autumn marks the transition from summer into winter, in September (Northern Hemisphere) or March (Southern Hemisphere) when the arrival of night becomes noticeably earlier. The equinoxes might be expected to be in the middle of their respective seasons, but temperature lag (caused by the thermal latency of the ground and sea) means that seasons appear later than dates calculated from a purely astronomical perspective.</p>
+						            <p class="like">12 Likes</p>
+					            </td>
+				            </tr><tr class="tbl-item even">					
+					            <!-- img -->
+					            <td class="img">
+						            <img src="img/lichterman.jpg" alt="" title="">
+					            </td>
+										
+					            <!-- data -->
+					            <td class="td-block">
+						            <p class="date">11/04/2001</p>
+						            <p class="title">Landscapes</p>
+						            <p class="desc">Landscape comprises the visible features of an area of land, including the physical elements of landforms such as (ice-capped) mountains, hills, water bodies such as rivers, lakes, ponds and the sea, living elements of land cover including indigenous vegetation, human elements including different forms of land use, buildings and structures, and transitory elements such as lighting and weather conditions.</p>
+						            <p class="like">14 Likes</p>
+					            </td>
+				            </tr><tr class="tbl-item odd">					
+					            <!-- img -->
+					            <td class="img">
+						            <img src="img/crayons.jpg" alt="" title="">
+					            </td>
+										
+					            <!-- data -->
+					            <td class="td-block">
+						            <p class="date">03/08/1990</p>
+						            <p class="title">Crayons</p>
+						            <p class="desc">A crayon is a stick of colored wax, charcoal, chalk, or other materials used for writing, coloring, drawing, and other methods of illustration. A crayon made of oiled chalk is called an oil pastel; when made of pigment with a dry binder, it is simply a pastel; both are popular media for color artwork. A grease pencil or china marker (UK chinagraph pencil) is made of colored hardened grease and is useful for marking on hard, glossy surfaces such as porcelain or glass. Some fine arts companies such as Swiss Caran d'Ache manufacture water-soluble crayons, whose colors are easily mixed once applied to media.</p>
+						            <p class="like">14 Likes</p>
+					            </td>
+				            </tr><tr class="tbl-item even">					
+					            <!-- img -->
+					            <td class="img">
+						            <img src="img/business-1.jpg" alt="" title="">
+					            </td>
+										
+					            <!-- data -->
+					            <td class="td-block">
+						            <p class="date">02/05/2004</p>
+						            <p class="title">Business</p>
+						            <p class="desc">A business (also known as enterprise or firm) is an organization engaged in the trade of goods, services, or both to consumers. Businesses are predominant in capitalist economies, where most of them are privately owned and administered to earn profit to increase the wealth of their owners. Businesses may also be not-for-profit or state-owned. A business owned by multiple individuals may be referred to as a company, although that term also has a more precise meaning.</p>
+						            <p class="like">15 Likes</p>
+					            </td>
+				            </tr><tr class="tbl-item odd">					
+					            <!-- img -->
+					            <td class="img">
+						            <img src="img/calendar-1.jpg" alt="" title="">
+					            </td>
+										
+					            <!-- data -->
+					            <td class="td-block">
+						            <p class="date">05/08/2003</p>
+						            <p class="title">Calendar</p>
+						            <p class="desc">A calendar is a system of organizing days for social, religious, commercial, or administrative purposes. This is done by giving names to periods of time, typically days, weeks, months, and years. The name given to each day is known as a date. Periods in a calendar (such as years and months) are usually, though not necessarily, synchronized with the cycle of the sun or the moon.</p>
+						            <p class="like">18 Likes</p>
+					            </td>
+				            </tr><tr class="tbl-item even">					
+					            <!-- img -->
+					            <td class="img">
+						            <img src="img/coffee-grass.jpg" alt="" title="">
+					            </td>
+										
+					            <!-- data -->
+					            <td class="td-block">
+						            <p class="date">02/02/2002</p>
+						            <p class="title">Coffee</p>
+						            <p class="desc">Coffee is a brewed beverage with a bitter, acidic flavor prepared from the roasted seeds of the coffee plant. The beans are found in coffee cherries, which grow on trees cultivated in over 70 countries, primarily in equatorial Latin America, Southeast Asia, South Asia and Africa. Green (unroasted) coffee is one of the most traded agricultural commodities in the world. Coffee can have a stimulating effect on humans due to its caffeine content. It is one of the most-consumed beverages in the world.</p>
+						            <p class="like">18 Likes</p>
+					            </td>
+				            </tr><tr class="tbl-item odd even">					
+					            <!-- img -->
+					            <td class="img">
+						            <img src="img/flower-2.jpg" alt="" title="">
+					            </td>
+										
+					            <!-- data -->
+					            <td class="td-block">
+						            <p class="date">01/11/2011</p>
+						            <p class="title">Pseudanthium</p>
+						            <p class="desc">A pseudanthium (Greek for "false flower") or flower head is a special type of inflorescence, in which several flowers are grouped together to form a flower-like structure. The real flowers are generally small and greatly reduced, but can sometimes be quite large (as in the sunflower flower head). Pseudanthia take various forms. The individual flowers of a pseudanthium can be called florets.</p>
+						            <p class="like">22 Likes</p>
+					            </td>
+				            </tr></tbody>
+		            </table>
+	            </div>
+	            <!-- end of data -->
+						
+	            <div class="box jplist-no-results text-shadow align-center jplist-hidden">
+		            <p>No results found</p>
+	            </div>
+						
+	            <!-- ios button: show/hide panel -->
+	            <div class="jplist-ios-button">
+		            <i class="fa fa-sort"></i>
+		            jPList Actions
+	            </div>
+						
+	            <!-- panel -->
+	            <div class="jplist-panel box panel-bottom">						
+													
+		            <!-- items per page dropdown -->
+		            <div class="jplist-drop-down" data-control-type="items-per-page-drop-down" data-control-name="paging" data-control-action="paging" data-control-animate-to-top="true"><div class="jplist-dd-panel"> 10 per page </div>
+								
+			            <ul style="display: none;">
+				            <li class=""><span data-number="3"> 3 per page </span></li>
+				            <li><span data-number="5"> 5 per page </span></li>
+				            <li class="active"><span data-number="10" data-default="true"> 10 per page </span></li>
+				            <li class=""><span data-number="all"> View All </span></li>
+			            </ul>
+		            </div>
+							
+		            <!-- sort dropdown -->
+		            <div class="jplist-drop-down" data-control-type="sort-drop-down" data-control-name="sort" data-control-action="sort" data-control-animate-to-top="true" data-datetime-format="{month}/{day}/{year}"><div class="jplist-dd-panel">Likes asc</div> <!-- {year}, {month}, {day}, {hour}, {min}, {sec} -->
+								
+			            <ul style="display: none;">
+				            <li class=""><span data-path="default">Sort by</span></li>
+				            <li><span data-path=".title" data-order="asc" data-type="text">Title A-Z</span></li>
+				            <li><span data-path=".title" data-order="desc" data-type="text">Title Z-A</span></li>
+				            <li><span data-path=".desc" data-order="asc" data-type="text">Description A-Z</span></li>
+				            <li><span data-path=".desc" data-order="desc" data-type="text">Description Z-A</span></li>
+				            <li class="active"><span data-path=".like" data-order="asc" data-type="number" data-default="true">Likes asc</span></li>
+				            <li><span data-path=".like" data-order="desc" data-type="number">Likes desc</span></li>
+				            <li><span data-path=".date" data-order="asc" data-type="datetime">Date asc</span></li>
+				            <li><span data-path=".date" data-order="desc" data-type="datetime">Date desc</span></li>
+			            </ul>
+		            </div>
+							
+		            <!-- pagination results -->
+		            <div class="jplist-label" data-type="{start} - {end} of {all}" data-control-type="pagination-info" data-control-name="paging" data-control-action="paging">1 - 10 of 33</div>
+								
+		            <!-- pagination -->
+		            <div class="jplist-pagination" data-control-type="pagination" data-control-name="paging" data-control-action="paging" data-control-animate-to-top="true"><div class="jplist-pagingprev jplist-hidden" data-type="pagingprev"><button type="button" class="jplist-first" data-number="0" data-type="first">«</button><button type="button" class="jplist-prev" data-type="prev" data-number="0">‹</button></div><div class="jplist-pagingmid" data-type="pagingmid"><div class="jplist-pagesbox" data-type="pagesbox"><button type="button" data-type="page" class="jplist-current" data-active="true" data-number="0">1</button> <button type="button" data-type="page" data-number="1">2</button> <button type="button" data-type="page" data-number="2">3</button> <button type="button" data-type="page" data-number="3">4</button> </div></div><div class="jplist-pagingnext" data-type="pagingnext"><button type="button" class="jplist-next" data-type="next" data-number="1">›</button><button type="button" class="jplist-last" data-type="last" data-number="3">»</button></div></div>
+					
+	            </div>
+            </div>
+            <!-- end of demo -->
+
+        </div>
+     </div>
+</div>             
+
+
